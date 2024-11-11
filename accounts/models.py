@@ -12,26 +12,26 @@ class customUser(models.Model):
     
     email = models.EmailField(
         unique=True,
-        null=False,
         blank=False,
+        default=""
     )
     
     password = models.CharField(
         max_length=18,
-        null=False,
         blank=False,
+        default=""
     )
     
     address = models.CharField(
         max_length=255,
-        null=False,
         blank=False,
+        default=""
     )
     
     phoneNumber = models.CharField(
         max_length=11,
-        null=False,
         blank=False,
+        default="",
         validators=[
             RegexValidator(
                 regex='^0[0-9]{10}$',
