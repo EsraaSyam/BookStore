@@ -32,6 +32,14 @@ class Order(models.Model):
     )
     
      # foreign key for the customer_id field
+     
+    userId = models.ForeignKey(
+        'accounts.User',
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE,
+    )
+    
     
     def __str__(self):
         return f'Order #{self.id}'

@@ -40,6 +40,20 @@ class Book(models.Model):
 
     # foreign key for author_id field in Author model, category_id field in Category model
     
+    authorId = models.ForeignKey(
+        'authors.Author',
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+    )
+    
+    categoryId = models.ForeignKey(
+        'categories.Category',
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE,
+    )
+    
 
     def __str__(self) :
         return self.title
